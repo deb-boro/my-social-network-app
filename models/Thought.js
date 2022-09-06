@@ -1,4 +1,5 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, Types } = require('mongoose')
+const dateFormat = require('../utils/dateFormat')
 
 const reactionSchema = new Schema(
   {
@@ -60,13 +61,10 @@ const thoughtSchema = new Schema(
     id: false,
   },
 )
-
-//Schema Settings..//Create a virtual called friendCount that retrieves the length of the user's friends array //field on query...
-
 thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length
 })
 
 const Thought = model('Thought', thoughtSchema)
-// export the User model
+// export the Thought model
 module.exports = Thought
