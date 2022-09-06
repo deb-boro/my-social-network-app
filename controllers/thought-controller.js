@@ -1,7 +1,7 @@
 const { Thought, User } = require('../models')
 
 const thoughtController = {
-  addThought({ params, body }, res) {
+  createThought({ params, body }, res) {
     console.log(body)
     Thought.create(body)
       .then(({ _id }) => {
@@ -45,12 +45,6 @@ const thoughtController = {
         console.log(err)
         res.status(400).json(err)
       })
-  },
-  // create Thought
-  createThought({ body }, res) {
-    Thought.create(body)
-      .then((dbThoughtData) => res.json(dbThoughtData))
-      .catch((err) => res.status(400).json(err))
   },
   // update Thought by id
   updateThought({ params, body }, res) {
