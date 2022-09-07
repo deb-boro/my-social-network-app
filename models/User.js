@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose')
+const { Schema, model, Types } = require('mongoose')
 const dateFormat = require('../utils/dateFormat')
 
 const userSchema = new Schema(
@@ -47,10 +47,7 @@ const userSchema = new Schema(
 
 //Schema Settings..//Create a virtual called friendCount that retrieves the length of the user's friends array //field on query...
 userSchema.virtual('friendCount').get(function () {
-  return this.friends.reduce(
-    (total, friend) => total + friend.friends.length + 1,
-    0,
-  )
+  return this.friends.length
 })
 
 const User = model('User', userSchema)
