@@ -8,7 +8,7 @@ My social network app is node.js & express.js based application using noSQL Mong
 
 ## Walkthrough Video
 
-[![Video]](https://user-images.githubusercontent.com/100662344/182751956-dfe290ad-b302-4ad5-a71f-44be5699767e.mp4)
+[![Video]](https://user-images.githubusercontent.com/100662344/188771215-35a98834-cbbc-40f8-a0f5-6263d861a411.mp4)
 
 ## Features
 
